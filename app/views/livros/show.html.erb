@@ -1,0 +1,16 @@
+<h2><%= t(:show, :default => "") %> <%= t(:livro, :default => "Livro") %></h2>
+
+  <p>
+    <b><%= t(:titulo, :default => "Titulo") %>:</b>
+      <%= @livro.titulo %>
+  </p>
+  <p>
+    <b><%= t(:autor, :default => "Autor") %>:</b>
+      <%= @livro.autor %>
+  </p>
+
+<!-- Beautiful_scaffold - AddField - Field - Do not remove -->
+
+<%= link_to t(:edit, :default => "Editar"), edit_livro_path(@livro), :class => "btn" %>
+<%= link_to t(:back, :default => "Voltar"), livros_path, :class => "btn" %>
+

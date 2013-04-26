@@ -1,4 +1,44 @@
 BibliotecaDaniell::Application.routes.draw do
+  match "emprestimos/search_and_filter" => "emprestimos#index", :via => [:get, :post], :as => :search_emprestimos
+  resources :emprestimos do
+    collection do
+      post :batch
+      get  :treeview
+    end
+    member do
+      post :treeview_update
+    end
+  end
+
+
+  match "livros/search_and_filter" => "livros#index", :via => [:get, :post], :as => :search_livros
+  resources :livros do
+    collection do
+      post :batch
+      get  :treeview
+    end
+    member do
+      post :treeview_update
+    end
+  end
+
+
+  match "alunos/search_and_filter" => "alunos#index", :via => [:get, :post], :as => :search_alunos
+  resources :alunos do
+    collection do
+      post :batch
+      get  :treeview
+    end
+    member do
+      post :treeview_update
+    end
+  end
+
+
+  root :to => 'beautiful#dashboard'
+  match ':model_sym/select_fields' => 'beautiful#select_fields'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,10 @@
+<!-- Beautiful Scaffold Menu Do Not Touch This -->
+      <li class="<%= "active" if params[:controller] == "emprestimos" %>">
+        <%= link_to t(:emprestimos, :default => "emprestimos").capitalize, emprestimos_path %>
+      </li>
+      <li class="<%= "active" if params[:controller] == "livros" %>">
+        <%= link_to t(:livros, :default => "livros").capitalize, livros_path %>
+      </li>
+      <li class="<%= "active" if params[:controller] == "alunos" %>">
+        <%= link_to t(:alunos, :default => "alunos").capitalize, alunos_path %>
+      </li>

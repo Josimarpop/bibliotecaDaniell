@@ -21,6 +21,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'beautiful_scaffold', '0.2.7'
+#gem 'prawn', '1.0.0.rc2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -36,3 +38,17 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# nokogiri requirements
+#sudo apt-get install libxslt-dev libxml2-dev
+#sudo gem install nokogiri
+gem 'nokogiri', '1.5.9'
+
+gem "will_paginate"
+gem "ransack"
+gem "RedCloth"
+gem "bb-ruby"
+gem "bluecloth"
+gem "rdiscount"
+gem "sanitize"
+gem "prawn", "1.0.0.rc1"

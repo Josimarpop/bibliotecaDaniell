@@ -1,0 +1,48 @@
+
+<%= form_for(@emprestimo, :html => { :class => "form-horizontal" }) do |f| %>
+  <% if @emprestimo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@emprestimo.errors.count, "erro.") %> O emprestimo nao pode ser realizado:</h2>
+
+      <ul>
+        <% @emprestimo.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
+      </ul>
+    </div>
+  <% end %>
+      <div class="control-group">
+      <%= f.label :data_de_emprestimo, t(:data_de_emprestimo, :default => "data_de_emprestimo").capitalize, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :data_de_emprestimo %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :data_de_devolucao, t(:data_de_devolucao, :default => "data_de_devolucao").capitalize, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :data_de_devolucao %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :devolvido_em, t(:devolvido_em, :default => "devolvido_em").capitalize, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :devolvido_em %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :aluno, t(:aluno, :default => "aluno").capitalize, :class => "control-label" %>
+      <div class="controls">
+        <%= f.select :aluno_id, Aluno.all.collect{|a| [a.nome, a.id]}, :prompt => 'Selecione Aluno' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :livro, t(:livro, :default => "livro").capitalize, :class => "control-label" %>
+      <div class="controls">
+        <%= f.select :livro_id, Livro.all.collect{|l| [l.titulo, l.id]}, :prompt => 'Selecione livro' %>
+      </div>
+    </div>
+<!-- Beautiful_scaffold - AddField - Do not remove -->
+  <div class="form-actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+

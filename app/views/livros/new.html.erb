@@ -1,0 +1,5 @@
+<h2><%= t(:new, :default => 'Novo') %> <%= t(:livro, :default => "livro") %></h2>
+
+<%= render 'form' %>
+
+<%= link_to t(:back, :default => "Voltar"), livros_path, :class => "btn" %>

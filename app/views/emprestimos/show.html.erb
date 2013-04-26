@@ -1,0 +1,28 @@
+<h2><%= t(:show, :default => "") %> <%= t(:emprestimo, :default => "Emprestimo") %></h2>
+
+  <p>
+    <b><%= t(:data_de_emprestimo, :default => "Data de emprestimo") %>:</b>
+      <%= @emprestimo.data_de_emprestimo %>
+  </p>
+  <p>
+    <b><%= t(:data_de_devolucao, :default => "Data de devolucao") %>:</b>
+      <%= @emprestimo.data_de_devolucao %>
+  </p>
+  <p>
+    <b><%= t(:devolvido_em, :default => "Devolvido em") %>:</b>
+      <%= @emprestimo.devolvido_em %>
+  </p>
+  <p>
+    <b><%= t(:aluno, :default => "Aluno") %>:</b>
+      <%= (@emprestimo.aluno.nil? ? "" : @emprestimo.aluno.nome) %>
+  </p>
+  <p>
+    <b><%= t(:livro, :default => "Livro") %>:</b>
+      <%= (@emprestimo.livro.nil? ? "" : @emprestimo.livro.titulo) %>
+  </p>
+
+<!-- Beautiful_scaffold - AddField - Field - Do not remove -->
+
+<%= link_to t(:edit, :default => "Editar"), edit_emprestimo_path(@emprestimo), :class => "btn" %>
+<%= link_to t(:back, :default => "Voltar"), emprestimos_path, :class => "btn" %>
+

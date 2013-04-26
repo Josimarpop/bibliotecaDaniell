@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  data_de_emprestimo: 2013-04-22
+  data_de_devolucao: 2013-04-22
+  devolvido_em: 2013-04-22
+  aluno: 
+  livro: 
+
+two:
+  data_de_emprestimo: 2013-04-22
+  data_de_devolucao: 2013-04-22
+  devolvido_em: 2013-04-22
+  aluno: 
+  livro: 

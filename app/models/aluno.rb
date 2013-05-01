@@ -22,5 +22,7 @@ class Aluno < ActiveRecord::Base
     (self["name"] || self["label"] || self["description"] || "##{id}")
   end
   attr_accessible :emprestimo_ids, :matricula, :nome
+  validates_presence_of :nome
+  validates_presence_of :matricula
 
 end

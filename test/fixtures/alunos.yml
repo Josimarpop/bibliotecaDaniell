@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nome: MyString
-  matricula: 1
+  nome: Joao
+  matricula: 32323
 
 two:
-  nome: MyString
-  matricula: 1
+  nome: Paula
+  matricula: 9880

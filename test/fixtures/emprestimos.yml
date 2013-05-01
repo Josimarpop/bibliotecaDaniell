@@ -2,14 +2,14 @@
 
 one:
   data_de_emprestimo: 2013-04-22
-  data_de_devolucao: 2013-04-22
-  devolvido_em: 2013-04-22
-  aluno: 
-  livro: 
+  data_de_devolucao: 2013-04-25
+  devolvido_em:
+  aluno:
+  livro:
 
 two:
-  data_de_emprestimo: 2013-04-22
-  data_de_devolucao: 2013-04-22
-  devolvido_em: 2013-04-22
-  aluno: 
-  livro: 
+  data_de_emprestimo: 2013-04-28
+  data_de_devolucao: 2013-05-02
+  devolvido_em: 2013-05-05
+  aluno:
+  livro:

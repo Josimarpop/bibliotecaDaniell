@@ -1,9 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  titulo: MyString
-  autor: MyString
+livro1:
+  titulo: biblia sagrada
+  autor: apostolos
 
-two:
-  titulo: MyString
-  autor: MyString
+livro2:
+  titulo: Java como Programar
+  autor: deitel
+
+livro3:
+  titulo: Codigo da vinci
+  autor: Dan Brown
+

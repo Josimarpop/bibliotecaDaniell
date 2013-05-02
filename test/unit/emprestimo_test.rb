@@ -1,7 +1,76 @@
 require 'test_helper'
 
 class EmprestimoTest < ActiveSupport::TestCase
-  fixtures :emprestimos
+  fixtures :emprestimos, :livros
+
+  def setup
+    @emp = emprestimos(:one)
+    @emp.livro = livros(:livro2)
+  end
+
+  def teardown
+    @emp = nil
+  end
+
+  test "devolvido em anterior a data de emprestimo" do
+    @emp.data_de_emprestimo = "02/05/2013"
+
+    @emp.devolvido_em = "01/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:devolvido_em].any?,@emp.errors.to_a.join
+    @emp.devolvido_em = "02/04/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:devolvido_em].any?
+    @emp.devolvido_em = "02/05/2012"
+    assert @emp.invalid?
+    assert @emp.errors[:devolvido_em].any?
+  end
+
+  test "data_de_devolucao deve ser de no maximo 7 dias" do
+    @emp.data_de_emprestimo = "02/05/2013"
+
+    @emp.data_de_devolucao = "03/05/2013"
+    assert @emp.errors[:data_de_devolucao].none?
+    @emp.data_de_devolucao = "04/05/2013"
+    assert @emp.errors[:data_de_devolucao].none?
+    @emp.data_de_devolucao = "05/05/2013"
+    assert @emp.errors[:data_de_devolucao].none?
+    @emp.data_de_devolucao = "06/05/2013"
+    assert @emp.errors[:data_de_devolucao].none?
+    @emp.data_de_devolucao = "07/05/2013"
+    assert @emp.errors[:data_de_devolucao].none?
+    @emp.data_de_devolucao = "08/05/2013"
+    assert @emp.errors[:data_de_devolucao].none?
+    @emp.data_de_devolucao = "09/05/2013"
+    assert @emp.errors[:data_de_devolucao].none?
+
+    @emp.data_de_devolucao = "10/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:data_de_devolucao].any?
+  end
+
+  test "a data de devolucao nao deve ser menor que a data de emprestimo " do
+    @emp.data_de_emprestimo= "22/05/2013"
+
+    @emp.data_de_devolucao = "21/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:data_de_devolucao].any?
+    @emp.data_de_devolucao = "20/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:data_de_devolucao].any?
+    @emp.data_de_devolucao = "19/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:data_de_devolucao].any?
+    @emp.data_de_devolucao = "18/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:data_de_devolucao].any?
+    @emp.data_de_devolucao = "17/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:data_de_devolucao].any?
+    @emp.data_de_devolucao = "16/05/2013"
+    assert @emp.invalid?
+    assert @emp.errors[:data_de_devolucao].any?
+  end
 
   def test_should_be_invalid
     emprestimo = Emprestimo.create

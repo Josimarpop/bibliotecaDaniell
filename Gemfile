@@ -28,6 +28,7 @@ end
 
 gem 'jquery-rails'
 gem 'beautiful_scaffold', '0.2.7'
+gem 'devise'
 
 #gem 'prawn', '1.0.0.rc2'
 

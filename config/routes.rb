@@ -1,4 +1,7 @@
 BibliotecaDaniell::Application.routes.draw do
+  devise_for :users
+  root to: "home#index"
+
   match "emprestimos/search_and_filter" => "emprestimos#index", :via => [:get, :post], :as => :search_emprestimos
   resources :emprestimos do
     collection do
@@ -87,7 +90,7 @@ BibliotecaDaniell::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
+  # just remember to delete public/index.html.bak.
   # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"

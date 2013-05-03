@@ -2,6 +2,7 @@
 class LivrosController < BeautifulController
 
   before_filter :load_livro, :only => [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # Uncomment for check abilities with CanCan
   #authorize_resource

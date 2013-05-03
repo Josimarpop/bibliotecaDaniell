@@ -37,6 +37,9 @@
               <li class="active">
                 <a href="/">Home</a>
               </li>
+              <li class="active">
+                <%= link_to "Sair", destroy_user_session_path, :method => :delete %>
+              </li>
             </ul>
             <ul class="nav pull-right">
               <li>

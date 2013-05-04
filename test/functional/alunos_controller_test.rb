@@ -1,15 +1,11 @@
 require 'test_helper'
 
 class AlunosControllerTest < ActionController::TestCase
+
   setup do
     @aluno = alunos(:one)
-    @user = User.create!(
-        :email => 'user@email.com',
-        :password => '12345678',
-        :password_confirmation => '12345678'
-
-    )
-
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class LivrosControllerTest < ActionController::TestCase
+
   setup do
     @livro = livros(:livro1)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

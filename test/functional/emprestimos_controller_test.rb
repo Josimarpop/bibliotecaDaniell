@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class EmprestimosControllerTest < ActionController::TestCase
+
   setup do
     @emprestimo = emprestimos(:two)
-
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

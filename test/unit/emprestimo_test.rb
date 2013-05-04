@@ -6,6 +6,11 @@ class EmprestimoTest < ActiveSupport::TestCase
   def setup
     @emp = emprestimos(:one)
     @emp.livro = livros(:livro2)
+    @user = User.create!(
+        :email => 'user@email.com',
+        :password => '12345678',
+        :password_confirmation => '12345678'
+    )
   end
 
   def teardown

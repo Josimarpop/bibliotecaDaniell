@@ -4,6 +4,15 @@ class AlunoTest < ActiveSupport::TestCase
 
   fixtures :alunos
 
+  def setup
+    @user = User.create!(
+        :email => 'user@email.com',
+        :password => '12345678',
+        :password_confirmation => '12345678'
+    )
+
+  end
+
   def test_should_be_invalid
     aluno = Aluno.create
     assert !aluno.valid?, "O Aluno nao deve ser criado"

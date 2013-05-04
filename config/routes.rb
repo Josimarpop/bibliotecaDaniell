@@ -38,8 +38,8 @@ BibliotecaDaniell::Application.routes.draw do
   end
 
 
-  root :to => 'beautiful#dashboard'
-  match ':model_sym/select_fields' => 'beautiful#select_fields'
+  #root :to => 'beautiful#dashboard'
+  #match ':model_sym/select_fields' => 'beautiful#select_fields'
 
 
   # The priority is based upon order of creation:
